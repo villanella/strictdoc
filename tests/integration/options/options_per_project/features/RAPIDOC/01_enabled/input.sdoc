@@ -1,8 +1,11 @@
 [DOCUMENT]
 TITLE: Rapidoc Openapi test
 
+[SECTION]
+TITLE: Freetext
+
 [FREETEXT]
-Expanded Rapidoc view in Freetext
+Expanded Rapidoc view in Freetext:
 
 .. raw:: html
 
@@ -17,12 +20,52 @@ Expanded Rapidoc view in Freetext
     > </rapi-doc-mini>
 [/FREETEXT]
 
+[/SECTION]
+
+[SECTION]
+TITLE: Requirement 
+
 [REQUIREMENT]
 TITLE: Rapidoc in requirement for Table/Traceability view
 STATEMENT: >>>
-Collapsed Rapidoc view in requirement.
+18 symbols is max.
 
-Note: Rapidoc isn't displayed in Deep-traceability view.
+.. raw:: html
+
+    <rapi-doc-mini
+    spec-url = "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v2.0/json/uber.json"
+    theme = "light"
+    bg-color = "#F2F5F9"
+    layout = "column"
+    > </rapi-doc-mini>
+<<<
+
+[REQUIREMENT]
+TITLE: Rapidoc in requirement: bug on Standalone and Deep Traceability screens
+STATEMENT: >>>
+If more than 18 symbols in the requiement statement, or Rapidoc settings contains ``style``, ``path-expanded`` or ``match-paths`` settings, the Standalone screen gets rendered only ``<...>`` in html output, instead of full Rapidoc view. Rendering Rapidoc on Deep traceability screen is also needs to be fixed.
+
+.. raw:: html
+
+    <rapi-doc-mini
+    style= "min-width:100x; border-radius: 4px;"
+    spec-url = "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v2.0/json/uber.json"
+    theme = "light"
+    bg-color = "#F2F5F9"
+    layout = "column"
+    match-paths = "get /products"
+    > </rapi-doc-mini>
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: Freetext 
+
+[FREETEXT]
+Rapidoc view in Freetext has no constraints. You can use all of the settings.
+
+For example, collapsed view:
 
 .. raw:: html
 
@@ -33,5 +76,8 @@ Note: Rapidoc isn't displayed in Deep-traceability view.
     bg-color = "#F2F5F9"
     layout = "column"
     paths-expanded = "false"
+    match-paths = "get /me"
     > </rapi-doc-mini>
-<<<
+[/FREETEXT]
+
+[/SECTION]
